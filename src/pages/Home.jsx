@@ -16,7 +16,7 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            src="/src/assets/Sourya_Profie.jpg" // ✅ Make sure the image exists
+            src="https://res.cloudinary.com/dftzw1p6x/image/upload/v1750350786/Sourya_Profie_m7mjzq.jpg" // ✅ Make sure the image exists
             alt="Sai Sourya"
             className="w-40 h-40 md:w-64 md:h-64 rounded-full object-center border-4 border-purple-500 shadow-lg"
           />
