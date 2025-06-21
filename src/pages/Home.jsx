@@ -6,8 +6,12 @@ const Home = () => {
   return (
     <Parallax bgImage="/assets/bg-hero.jpg" strength={500}>
       <div className="h-screen w-full flex items-center justify-center relative px-4">
-        {/* 🔳 Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90 backdrop-blur-md z-0" />
+        {/* 🔳 Dark/light mode-aware overlay */}
+        <div className="absolute inset-0 z-0 backdrop-blur-md transition-colors duration-300
+          bg-gradient-to-br
+          from-white/80 via-white/70 to-white/90
+          dark:from-black/80 dark:via-black/70 dark:to-black/90
+        " />
 
         {/* 🧑‍💻 Content Wrapper */}
         <div className="z-10 flex flex-col md:flex-row items-center justify-between gap-10 max-w-6xl w-full">
@@ -16,7 +20,7 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            src="https://res.cloudinary.com/dftzw1p6x/image/upload/v1750350786/Sourya_Profie_m7mjzq.jpg" // ✅ Make sure the image exists
+            src="https://res.cloudinary.com/dftzw1p6x/image/upload/v1750350786/Sourya_Profie_m7mjzq.jpg"
             alt="Sai Sourya"
             className="w-40 h-40 md:w-64 md:h-64 rounded-full object-center border-4 border-purple-500 shadow-lg"
           />
@@ -27,16 +31,16 @@ const Home = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-md"
+              className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white drop-shadow-md"
             >
-              Hey, I'm <span className="text-purple-400">Sai Sourya</span> 👋
+              Hey, I'm <span className="text-purple-500">Sai Sourya</span> 👋
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="mt-4 text-lg md:text-2xl text-gray-300 font-medium"
+              className="mt-4 text-lg md:text-2xl text-gray-700 dark:text-gray-300 font-medium"
             >
               <Typewriter
                 words={[
